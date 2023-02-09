@@ -8,28 +8,36 @@ backend:
 media_folder: "src/static/img"
 public_folder: "/static/img"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
+  - label: "Události"
+    name: "udalosti"
+    folder: "src/events"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Název", name: "title", widget: "string" }
+      - { label: "Začátek", name: "startdate", widget: "date", default: '', format: 'DD. MM.' }
+      - { label: "Konec", name: "enddate", widget: "date",required: false, default: '', format: 'DD. MM.' }
+      - { label: "Lokace", name: "location", widget: "string" }
+      - { label: "Obsah", name: "body", widget: "markdown" } 
+  - label: "Projekty"
+    name: "projekty"
     folder: "src/posts"
     create: true
     editor:
       preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Název", name: "title", widget: "string" }
+      - { label: "Popis", name: "subtitle", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["Tags", "created", "from", "config.yml"]
   - label: "Settings"
     name: "settings"
     editor:

@@ -4,12 +4,49 @@
 
 /*Your Custom CSS Goes here*/
 
+html, body {
+  font-size: 16px;
+}
+
 h1 {
   @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
 }
 
 h3 {
   @apply text-2xl font-bold mb-3;
+}
+
+.card {
+  border-radius: 0.5rem;
+  min-height: 100%;
+}
+
+.card img {
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.card .location {
+  font-size: 1rem;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+}
+
+.card .date {
+  font-size: 0.8rem;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
 }
 
 /* Syntax Highlighting*/
