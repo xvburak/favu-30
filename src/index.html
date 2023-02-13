@@ -4,19 +4,81 @@ title: Neat Starter
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+<main class="grid grid-cols-1 md:grid-cols-4 gap-12">
+  <section class="col-span-1">
+    <p>Rok FaVU je celoroční festival akcí uspořádaných
+      u příležitosti 30. výročí od založení Fakulty výtvarných umění VUT v Brně. Na této stránce najdete přehled
+      událostí nebo projeků, které k výročí vznikly.</p>
+  </section>
+  <section class="md:col-span-3">
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
 
-  {% include "./_includes/partials/content.html" %}
+    <div x-data="{
+      openTab: 1,
+      activeClasses: 'bg-indigo-500 absolute inset-x-0 bottom-0 h-0.5',
+      inactiveClasses: 'bg-transparent absolute inset-x-0 bottom-0 h-0.5',
+    }" class="">
+
+    <div class="">
+        <nav class="mb-4" aria-label="Tabs">
+
+            <a @click="openTab = 1" href="#" aria-current="page" class="button" :class="openTab == 1 ? 'active':'passive'">
+              <span aria-hidden="true">Události</span>
+            </a>
+
+            <a @click="openTab = 2" href="#" aria-current="page" class="button" :class="openTab == 2 ? 'active':'passive'">
+              <span aria-hidden="true">Projekty</span>
+            </a>
+        </nav>
+    </div>
+    <div class=" w-full items-center">
+        <div x-show="openTab == 1" class="md:flex-1 mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {% set eventlist = collections.event %}
+            {% for event in eventlist | reverse %}
+                <article class="">
+                        <a href="{{ event.url | url }}">
+                            <div class="card">
+                                <img src="https://media.graphassets.com/BFp0bD0LTQq4RZFdazMu" alt="avatar" style="width:100%">
+                                <div class="container p-4">
+                                    <div class="date flex">
+                                        <p>{{ event.data.startdate }}</p>
+                                        {% if event.data.enddate %}
+                                            <p>&nbsp– {{ event.data.enddate }}</p>
+                                        {% else %}
+                                        {% endif %}
+                                    </div>
+                                    <h3>{{ event.data.title }}</h3>
+                                    <p class="location">{{ event.data.location }}</p>
+                                </div>
+                              </div>
+                        </a>
+                </article>
+              {% endfor %}
+          </div>          
+        </div>
+        <div x-show="openTab == 2" class="md:flex-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {% set postslist = collections.post %}
+            {% for post in postslist | reverse %}
+                <article class="">
+                        <a href="{{ post.url | url }}">
+                            <div class="card">
+                                <img src="https://media.graphassets.com/BFp0bD0LTQq4RZFdazMu" alt="avatar" style="width:100%">
+                                <div class="container p-4">
+                                    <h3>{{ post.data.title }}</h3>
+                                    <p class="location">{{ event.data.subtitle }}</p>
+                                </div>
+                              </div>
+                        </a>
+                </article>
+              {% endfor %}
+          </div> 
+        </div>
+    </div>
 </div>
+
+
+
+  </section>
+</main>

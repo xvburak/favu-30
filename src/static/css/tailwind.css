@@ -5,8 +5,12 @@
 /*Your Custom CSS Goes here*/
 
 html, body {
-  font-size: 16px;
+  @apply bg-neutral-600;
+  font-size: 18px;
+  color: #F2F2F2;
 }
+
+
 
 h1 {
   @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
@@ -16,7 +20,21 @@ h3 {
   @apply text-2xl font-bold mb-3;
 }
 
+.button {
+  @apply py-1 px-2 w-32 rounded-md border border-neutral-100 mr-2;
+}
+
+.active {
+  @apply text-neutral-600 bg-neutral-100
+}
+
+.passive { 
+  @apply text-neutral-100 bg-neutral-600
+}
+
 .card {
+  @apply text-neutral-600;
+  background-color: #F2F2F2;
   border-radius: 0.5rem;
   min-height: 100%;
 }

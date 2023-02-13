@@ -1,5 +1,6 @@
 ---
 title: This is my first post
+subtitle: Výstava a databáze diplomantek FaVU.
 startdate: 2020-09-01
 ---
 # This is a Heading h1

@@ -6,8 +6,7 @@ location: Dům pánů z Kunštátu, Dominikánská 348
 ---
 ![occupy favu](/static/img/rectangle-1.png "occupy favu")
 
-Fakulta výtvarných umění Vysokého učení technického v Brně je historicky první z uměleckých fakult, 
-které vznikly jako žádoucí protiváha vzdělávacího 
+Fakulta výtvarných umění Vysokého učení technického v Brně je historicky první z uměleckých fakult, které vznikly jako žádoucí protiváha vzdělávacího 
 a kulturního centralismu, jenž byl zřetelný obzvlášť 
 v případě uměleckého školství. Proto je přehlídka k třiceti letům existence FaVU koncipována jako heterogenní a otevřená struktura, nikoli jako tradiční jubilejní výstava situovaná do kamenné galerijní instituce. Toto pojetí má za cíl vystoupení z často uzavřeného komunitního rámce výtvarného provozu 
 a jeho atraktivní zprostředkování obyvatelům města, jeho návštěvníkům a dočasným rezidentům.
